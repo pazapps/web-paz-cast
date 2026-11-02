@@ -18,7 +18,8 @@
 
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="A new Flutter project.">
+  <meta name="description" content="App Paz Castanhal">
+  <meta name="theme-color" content="#020617">
 
   <!-- iOS meta tags & icons -->
   <meta name="mobile-web-app-capable" content="yes">
@@ -29,7 +30,7 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png"/>
 
-  <title>paz_castanhal</title>
+  <title>Paz Castanhal</title>
   <link rel="manifest" href="manifest.json">
   <!-- Local font loading: place your font files under web/assets/fonts/ and
        update names below if you use different files. This avoids runtime
@@ -55,7 +56,13 @@
     }
     /* Ensure flutter uses the local font as a fallback; the app can
        reference 'RobotoLocal' in its CSS or text styles on the web. */
-    html, body { font-family: 'RobotoLocal', sans-serif; }
+    /* Fundo escuro evita "flash" branco e telas transparentes sem contraste
+       enquanto o Flutter inicializa. */
+    html, body {
+      background-color: #020617;
+      color: #ffffff;
+      font-family: 'RobotoLocal', sans-serif;
+    }
   </style>
 
   <!-- CanvasKit hosting notes:
