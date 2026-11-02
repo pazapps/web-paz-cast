@@ -154508,28 +154508,28 @@ ap(){this.aF()
 this.aeS()},
 b_(a){this.bq(a)
 if(a.c!==this.a.c)this.aeS()},
-aeS(){var s,r=$.bLL
-$.bLL=r+1
-this.d="soundcloud-player-"+r
-s=v.G.document.createElement("iframe")
-s.src=this.a.c
-s.title="Player oficial do SoundCloud"
-s.allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-s.allowFullscreen=!0
-s.referrerPolicy="strict-origin-when-cross-origin"
-r=s.style
-r.border="0"
-r.width="100%"
-r.height="100%"
-r.display="block"
+aeS(){var s=$.bLL
+$.bLL=s+1
+s="soundcloud-player-"+s
+this.d=s
 $.rm()
-r=this.d
-$.ko().oQ(r,new A.bn9(s),!0)},
+$.ko().oQ(s,new A.bn9(this),!0)},
 G(a){var s=this.d
 s===$&&A.b()
 return new A.oC(s,null,null,B.i4,null)}}
 A.bn9.prototype={
-$1(a){return this.a},
+$1(a){var s,r=v.G.document.createElement("iframe")
+r.src=this.a.a.c
+r.title="Player oficial do SoundCloud"
+r.allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+r.allowFullscreen=!0
+r.referrerPolicy="origin"
+s=r.style
+s.border="0"
+s.width="100%"
+s.height="100%"
+s.display="block"
+return r},
 $S:93}
 A.TA.prototype={
 ad(){return new A.au9()}}

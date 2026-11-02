@@ -20,6 +20,7 @@
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
   <meta name="description" content="App Paz Castanhal">
   <meta name="theme-color" content="#020617">
+  <meta name="app-web-release" content="20261102-home-player">
 
   <!-- iOS meta tags & icons -->
   <meta name="mobile-web-app-capable" content="yes">
@@ -88,6 +89,22 @@
     For more details:
     * https://docs.flutter.dev/platform-integration/web/initialization
   -->
-  <script src="flutter_bootstrap.js" async></script>
+  <script>
+    const webRelease = '20261102-home-player';
+    if ('serviceWorker' in navigator &&
+        sessionStorage.getItem('paz-web-release') !== webRelease) {
+      sessionStorage.setItem('paz-web-release', webRelease);
+      navigator.serviceWorker.getRegistrations().then((registrations) => {
+        Promise.all(registrations.map((registration) => registration.unregister()))
+          .then(() => {
+            if ('caches' in window) {
+              caches.keys().then((keys) => Promise.all(keys.map((key) => caches.delete(key))));
+            }
+            window.location.reload();
+          });
+      });
+    }
+  </script>
+  <script src="flutter_bootstrap.js?v=20261102-home-player" async></script>
 </body>
 </html>
